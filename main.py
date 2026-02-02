@@ -16,7 +16,7 @@ def tambah_pengeluaran():
         print("Saldo tidak cukup!")
 
 def lihat_saldo():
-    pass
+    print(f"Saldo saat ini: Rp {saldo}")
 
 def menu():
     print("=== Aplikasi Pengelola Uang Saku ===")
