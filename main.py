@@ -1,4 +1,18 @@
-saldo = 0
+import json
+
+def muat_saldo():
+    try:
+        with open('saldo.json', 'r') as f:
+            data = json.load(f)
+            return data.get('saldo', 0)
+    except FileNotFoundError:
+        return 0
+
+def simpan_saldo():
+    with open('saldo.json', 'w') as f:
+        json.dump({'saldo': saldo}, f)
+
+saldo = muat_saldo()
 
 def tambah_pemasukan():
     global saldo
@@ -36,6 +50,7 @@ while True:
     elif pilihan == "3":
         lihat_saldo()
     elif pilihan == "4":
+        simpan_saldo()
         print("Terima kasih!")
         break
     else:
