@@ -7,7 +7,13 @@ def tambah_pemasukan():
     print("Pemasukan berhasil ditambahkan!")
 
 def tambah_pengeluaran():
-    pass
+    global saldo
+    jumlah = float(input("Masukkan jumlah pengeluaran: "))
+    if saldo >= jumlah:
+        saldo -= jumlah
+        print("Pengeluaran berhasil ditambahkan!")
+    else:
+        print("Saldo tidak cukup!")
 
 def lihat_saldo():
     pass
